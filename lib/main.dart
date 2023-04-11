@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workwise/widgets/navgenrator.dart';
+import 'package:workwise/widgets/splashscreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
   runApp(const Edgex());
 }
 
@@ -19,11 +22,9 @@ class Edgex extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromRGBO(26, 27, 36, 1.0),
       ),
       // ignore: prefer_const_constructors
-      home: Home(),
+      home: Splashscreen(),
     );
   }
-
-  fromRGBO(int i, int j, int k, double d) {}
 }
 
 class Home extends StatelessWidget {
@@ -31,46 +32,29 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: sized_box_for_whitespace
-      body: Stack(children: <Widget>[
-        Image.asset('assets/background/home.png'),
-        Row(
-          children: [
+      body: Stack(
+        children: <Widget>[
+          Image.asset('assets/background/home.png'),
+          Row(children: [
             Container(
               width: 300,
               color: const Color.fromRGBO(34, 36, 51, 0.8),
               height: MediaQuery.of(context).size.height,
-              child: Column(children: [
+              // ignore: prefer_const_constructors
+              child:Navgenrator()
+              ),
+            Column(
+              children: [
                 Container(
-                  margin: const EdgeInsetsDirectional.all(30),
-                  child: Row(
-                    children: const [
-                      Image(
-                        image: AssetImage('assets/app_logo/main_app.png'),
-                        width: 23,
-                        height: 23,
-                      ),
-                      Spacer(),
-                      Text(
-                        'WorkWise',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Spacer(flex: 15)
-                    ],
-                  ),
+                  width: MediaQuery.of(context).size.width - 300,
+                  color: const Color.fromRGBO(34, 36, 51, 0.8),
+                  height: 86,
                 ),
-              Container(
-                // child: Row(children: [
-                  
-                // ]),
-              )]),
-            ),
-          ],
-        )
-      ]),
+              ],
+            )
+          ]),
+        ],
+      ),
     );
   }
 }

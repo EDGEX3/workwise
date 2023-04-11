@@ -1,7 +1,25 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:workwise/main.dart';
 
-class Splashscreen extends StatelessWidget {
+class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
+  @override
+  State<Splashscreen> createState() => _Splashscreen();
+}
+
+class _Splashscreen extends State<Splashscreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Home(),
+          ));
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
