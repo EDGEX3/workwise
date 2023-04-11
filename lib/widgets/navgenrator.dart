@@ -238,8 +238,7 @@ class _NavTreeState extends State<NavTree> {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: widget.def,
-        splashFactory: NoSplash.splashFactory,
-        
+       focusColor: Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.only(left: 10),
           child:Row(
