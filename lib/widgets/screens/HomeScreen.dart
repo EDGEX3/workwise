@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
           ]
           ),
-        transform: Matrix4.translationValues(xoffset,0, 0)..scale(1),
+        transform: Matrix4.translationValues(xoffset, 0, 0),
         duration: Duration(milliseconds: 300),
         child: Column(
           children: [
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             border = 0;
                             isDrawer = false;
                           } else {
-                            xoffset = (MediaQuery.of(context).size.width)/2.5;
+                            xoffset = 265;
                             border = 12;
                             isDrawer = true;
                           }
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
                   ),
                   CircleAvatar(
-                    backgroundColor: Workwise.primaryColor,
+                    backgroundColor: Workwise.scaffoldBackgroundColor,
                   )
                 ],
               ),
