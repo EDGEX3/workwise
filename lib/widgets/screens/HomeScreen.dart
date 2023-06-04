@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isDrawer = false;
   double border = 0;
   // ignore: prefer_typing_uninitialized_variables
-  var maindata;
   // ignore: non_constant_identifier_names
   void Drawer() {
     setState(() {
