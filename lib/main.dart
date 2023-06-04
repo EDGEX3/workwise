@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workwise/theme/theme.dart';
 import 'package:workwise/widgets/screens/DrawerScreen.dart';
 import 'package:workwise/widgets/screens/HomeScreen.dart';
-
+import 'package:workwise/widgets/template/navbar.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -30,11 +31,12 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Workwise.scaffoldBackgroundColor,
         body: Stack(
       // ignore: prefer_const_literals_to_create_immutables
       children: [
        DrawerScreen(),
-       HomeScreen()
+       HomeScreen(Page_selection)
       ],
     ));
   }
