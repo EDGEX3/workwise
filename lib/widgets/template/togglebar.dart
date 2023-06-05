@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-
 import '../../theme/theme.dart';
 
 // ignore: must_be_immutable
 class Togglebar extends StatelessWidget {
   // ignore: non_constant_identifier_names
-  Function Menu = () {};
+  Function menu = () {};
   bool isDrawer = true;
   String pagename = "";
-  // ignore: non_constant_identifier_names
-  Togglebar(Function Menu, bool isDrawer, String pagename, {super.key}) {
+  Togglebar(Function menu, bool isDrawer, String pagename, {super.key}) {
     // ignore: prefer_initializing_formals
-    this.Menu = Menu;
+    this.menu = menu;
     // ignore: prefer_initializing_formals
     this.isDrawer = isDrawer;
     // ignore: prefer_initializing_formals
@@ -32,7 +30,7 @@ class Togglebar extends StatelessWidget {
             children: [
               IconButton(
                   onPressed: () {
-                    Menu();
+                    menu();
                   },
                   icon: Icon(
                       !isDrawer ? Icons.menu_rounded : Icons.arrow_back_ios)),
