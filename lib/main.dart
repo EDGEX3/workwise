@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workwise/splashscreen.dart';
 import 'package:workwise/theme/theme.dart';
 import 'package:workwise/widgets/options/bill.dart';
 import 'package:workwise/widgets/options/buyer.dart';
@@ -28,7 +30,7 @@ class Edgex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WorkWise',
-      home: Home(),
+      home: Splashscreen(),
     );
   }
 }
@@ -45,7 +47,7 @@ class _HomeState extends State<Home> {
   double xoffset = 0;
   bool isDrawer = false;
   double border = 0;
-  
+
   void drawer() {
     setState(() {
       if (isDrawer) {

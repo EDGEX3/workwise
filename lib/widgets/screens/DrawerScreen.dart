@@ -27,13 +27,13 @@ class DrawerScreen extends StatelessWidget {
   Widget buildlistlile(MenuItem item) => ListTile(
         selected: CurrentItem == item,
         selectedTileColor: const Color.fromARGB(20, 0, 0, 0),
-        leading: Icon(item.icon, color: Workwise.primaryColor, size: 20),
+        leading: Icon(item.icon, color: Workwise.secondaryColor, size: 20),
         horizontalTitleGap: 0,
         contentPadding: const EdgeInsets.only(left: 10, right: 10),
         title: Text(
           item.title,
           style: const TextStyle(
-              color: Workwise.primaryColor,
+              color: Workwise.secondaryColor,
               fontSize: 14,
               fontWeight: FontWeight.w600),
         ),
@@ -50,7 +50,7 @@ class DrawerScreen extends StatelessWidget {
               flex: 1,
             ),
             const CircleAvatar(
-              backgroundColor: Workwise.primaryColor,
+              backgroundColor: Colors.white,
               child: Image(
                 image: AssetImage("assets/app_logo/main_app.png"),
                 height: 15,
@@ -66,14 +66,14 @@ class DrawerScreen extends StatelessWidget {
                 Text(
                   "USER NAME",
                   style: TextStyle(
-                      color: Workwise.primaryColor,
+                      color: Workwise.secondaryColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 12),
                 ),
                 Text(
                   "123@gmail.com",
                   style: TextStyle(
-                      color: Workwise.primaryColor,
+                      color: Workwise.secondaryColor,
                       fontWeight: FontWeight.w200,
                       fontSize: 12),
                 )
@@ -89,7 +89,7 @@ class DrawerScreen extends StatelessWidget {
                 width: 30,
                 child: Icon(
                   Icons.unfold_more,
-                  color: Workwise.primaryColor,
+                  color: Workwise.secondaryColor,
                 ),
               ),
               onTap: () {},

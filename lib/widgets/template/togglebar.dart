@@ -40,11 +40,11 @@ class Togglebar extends StatelessWidget {
                     const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
               ),
               const CircleAvatar(
-                backgroundColor: Workwise.primaryColor,
+                backgroundColor: Workwise.scaffoldBackgroundColor,
                 child: Image(
                 image: AssetImage("assets/app_logo/main_app.png"),
-                height: 15,
-                width: 15,
+                height: 25,
+                width: 25,
               ),
               )
             ],
