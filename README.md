@@ -1,4 +1,4 @@
-# workwise powered by pegvin
+# workwise powered by edgex
 
 Full fledged cross platform erp application.
 
