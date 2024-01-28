@@ -1,6 +1,6 @@
-# workwise
+# workwise powered by pegvin
 
-A new Flutter project.
+Full fledged cross platform erp application.
 
 ## Getting Started
 
