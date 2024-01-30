@@ -9,7 +9,7 @@ ThemeData appThemeData = ThemeData(
       seedColor: TColors.secondary,
       brightness: Brightness.dark,
     ),
-  cardTheme: TCard,
+  cardTheme: tCard,
   fontFamily: 'popins',
   iconTheme: const IconThemeData(color: TColors.secondary,size: TSizes.iconMd),
   splashColor: Colors.white24

@@ -1,8 +1,11 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 
+// ignore: must_be_immutable
 class ListBox extends StatelessWidget {
   Widget DataContainer;
   ListBox({super.key, required this.DataContainer});
