@@ -43,12 +43,12 @@ class TSizes {
   static const double borderRadiusLg = 13.0;
 
   // Divider height
-  static const double dividerHeight = 1.0;
+  static const double dividerHight = 1.0;
 
   // Product item dimensions
   static const double productImageSize = 120.0;
   static const double productImageRadius = 16.0;
-  static const double productItemHeight = 160.0;
+  static const double productItemHight = 160.0;
 
   // Input field
   static const double inputFieldRadius = 13.0;
@@ -57,15 +57,19 @@ class TSizes {
   // Card sizes
   static const double cardRadiusLg = 13.0;
   static const double cardPadding = 30.0;
-  static const double cardHeight = 250;
+  static const double cardHight = 250;
   static const double cardWidth = 380;
+  static const double spaceBtwCards = 30.0;
 
   // List sizes
   static const double listRadiusLg = 13.0;
   static const double listPadding = 20.0;
-  static const double listMinHeight = 90;
-  static const double listMaxHeight = 122;
-
+  static const double listMinHight = 90;
+  static const double listMaxHight = 122;
+  
+  // Main container sizes
+  static const double MainContainerRadius = 30.0;
+  
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
 }

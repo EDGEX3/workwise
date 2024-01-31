@@ -12,30 +12,34 @@ class ListBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-        decoration: const BoxDecoration(
+    return Container(
+      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          minHeight: TSizes.listMinHight,
+          maxHeight: TSizes.listMaxHight,
+          minWidth: double.infinity,
+        ),
+        child: DecoratedBox(
+          decoration: const BoxDecoration(
+              borderRadius:
+                  BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
+              gradient: TColors.whiteGradients),
+          child: InkWell(
             borderRadius:
-                BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
-            gradient: TColors.whiteGradients),
-        child: InkWell(
-          borderRadius:
-              const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
-          key: key,
-          onTap: () => {},
-          child: Padding(
-            padding: const EdgeInsets.all(TSizes.listPadding),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minHeight: TSizes.listMinHeight,
-                maxHeight: TSizes.listMaxHeight,
-                minWidth: double.infinity,
-              ),
+                const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
+            key: key,
+            onTap: () => {},
+            child: Padding(
+              padding: const EdgeInsets.all(TSizes.listPadding),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [DataContainer,const Icon(Iconsax.arrow_right_3)],
+                children: [DataContainer, const Icon(Iconsax.arrow_right_3)],
               ),
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
