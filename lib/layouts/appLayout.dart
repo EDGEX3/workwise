@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workwise/layouts/page-layout/navigator_layout.dart';
+import 'package:workwise/layouts/pageLayout/navigatorLayout.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/theme/theme.dart';
 
@@ -14,7 +14,7 @@ class _AppLayoutState extends State<AppLayout> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Worlwise a mini erp",
+      title: "Worlwise the  powerful friend",
       theme: appThemeData,
       home: const Scaffold(
         backgroundColor: TColors.secondary,

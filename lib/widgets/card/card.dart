@@ -90,10 +90,11 @@ class OrderCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Image.asset(
-                  "icons/loadingicon.png",
+                Image.network(
+                  "http://www.pngall.com/wp-content/uploads/2/QR-Code-PNG-Photo.png",
                   width: 64,
                   height: 64,
+                  color: TColors.secondary,
                 )
               ],
             ),

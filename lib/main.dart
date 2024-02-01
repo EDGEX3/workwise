@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:workwise/layouts/app_layout.dart';
+import 'package:workwise/layouts/appLayout.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
