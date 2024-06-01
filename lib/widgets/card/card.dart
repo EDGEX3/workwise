@@ -9,97 +9,97 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      
       onTap: () {},
       borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
       child: Container(
         width: TSizes.cardWidth,
         height: TSizes.cardHight,
         padding: EdgeInsets.all(TSizes.cardPadding),
-        
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-            gradient: TColors.whiteGradients),
+          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
+          gradient: TColors.whiteGradients,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Flex(
-                  direction: Axis.vertical,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Id : 567348758702384",
-                      style: small,
-                    ),
-                    SizedBox(
-                      height: TSizes.defaultMinSpace,
-                    ),
-                    Text(
-                      "Name : Krunal bhadeshiya",
-                      style: small,
-                    ),
-                    SizedBox(
-                      height: TSizes.defaultMinSpace,
-                    ),
-                    Text(
-                      "Tax : 755697355554",
-                      style: small,
-                    ),
-                  ],
-                ),
-                Flex(
-                  direction: Axis.vertical,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Order Date : 29-12-2003",
-                      style: small,
-                    ),
-                    SizedBox(
-                      height: TSizes.defaultMinSpace,
-                    ),
-                    Text(
-                      "Status : Pending",
-                      style: small,
-                    ),
-                  ],
-                ),
-              ],
+            _buildTopSection(),
+            _buildBottomSection(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTopSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildLeftColumn(),
+        _buildRightColumn(),
+      ],
+    );
+  }
+
+  Widget _buildLeftColumn() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildTextRow("Id : 567348758702384"),
+        _buildTextRow("Name : Krunal Bhadeshiya"),
+        _buildTextRow("Tax : 755697355554"),
+      ],
+    );
+  }
+
+  Widget _buildRightColumn() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        _buildTextRow("Order Date : 29-12-2003"),
+        _buildTextRow("Status : Pending"),
+      ],
+    );
+  }
+
+  Widget _buildBottomSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Total Amount",
+              style: mid,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Flex(
-                  direction: Axis.vertical,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Total Amount",
-                      style: mid,
-                    ),
-                    SizedBox(
-                      height: TSizes.defaultMinSpace,
-                    ),
-                    Text(
-                      "10000 \$",
-                      style: TextStyle(fontFamily: 'Digital Numbers'),
-                    ),
-                  ],
-                ),
-                Image.network(
-                  "http://www.pngall.com/wp-content/uploads/2/QR-Code-PNG-Photo.png",
-                  width: 64,
-                  height: 64,
-                  color: TColors.secondary,
-                )
-              ],
+            SizedBox(
+              height: TSizes.defaultMinSpace,
+            ),
+            Text(
+              "10000 \$",
+              style: TextStyle(fontFamily: 'Digital Numbers'),
             ),
           ],
         ),
+        Image.asset(
+          "qr.png",
+          width: 64,
+          height: 64,
+          color: TColors.secondary,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTextRow(String text) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: TSizes.defaultMinSpace),
+      child: Text(
+        text,
+        style: small,
       ),
     );
   }

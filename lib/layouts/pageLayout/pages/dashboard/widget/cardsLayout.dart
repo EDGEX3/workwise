@@ -22,6 +22,7 @@ class CardSection extends StatelessWidget {
         height: TSizes.cardHight,
         margin: EdgeInsets.only(left: TSizes.spaceBtwCards + 50),
         child: ListView.separated(
+          shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: 10,
           cacheExtent: 3,

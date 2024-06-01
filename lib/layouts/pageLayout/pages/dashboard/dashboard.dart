@@ -10,18 +10,30 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        NavBar(),
-        SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-        CardSection(),
-        SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-        Expanse()
-      ],
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Column(
+        children: [
+          NavBar(),
+          SizedBox(
+            height: TSizes.spaceBtwSections,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  CardSection(),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+                  Expanse(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
