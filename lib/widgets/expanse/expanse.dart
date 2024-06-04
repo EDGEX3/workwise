@@ -10,7 +10,7 @@ class Expanse extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
-      cacheExtent: 5,
+      cacheExtent: 2,
       itemBuilder: (context, index) => Column(
         children: [
           ExpanseInfo(),
@@ -21,6 +21,7 @@ class Expanse extends StatelessWidget {
         ],
       ),
       itemCount: 5,
+      
       separatorBuilder: (context, index) => SizedBox(
         height: TSizes.spaceBtwItems + TSizes.defaultSpace,
       ),

@@ -1,19 +1,17 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 
-// ignore: must_be_immutable
 class ListBox extends StatelessWidget {
-  Widget DataContainer;
-  ListBox({super.key, required this.DataContainer});
+  final Widget dataContainer;
+
+  ListBox({super.key, required this.dataContainer});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
           minHeight: TSizes.listMinHight,
@@ -22,19 +20,20 @@ class ListBox extends StatelessWidget {
         ),
         child: DecoratedBox(
           decoration: const BoxDecoration(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
-              gradient: TColors.whiteGradients),
+            borderRadius: BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
+            color: TColors.white10,
+          ),
           child: InkWell(
-            borderRadius:
-                const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
-            key: key,
+            borderRadius: const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
             onTap: () => {},
             child: Padding(
               padding: const EdgeInsets.all(TSizes.listPadding),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [DataContainer, const Icon(Iconsax.arrow_right_3)],
+                children: [
+                  dataContainer,
+                  const Icon(Iconsax.arrow_right_3),
+                ],
               ),
             ),
           ),

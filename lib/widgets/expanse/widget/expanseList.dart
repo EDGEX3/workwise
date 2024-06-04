@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
+import 'package:workwise/widgets/expanse/widget/tag.dart';
 import 'package:workwise/widgets/listbox/listbox.dart';
 
 class ExpanseList extends StatelessWidget {
@@ -8,13 +11,56 @@ class ExpanseList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        shrinkWrap: true,
-        cacheExtent: 5,
-        physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) => ListBox(DataContainer: Text("$index")),
-        separatorBuilder: (context, index) => SizedBox(
-              height: TSizes.defaultSpace,
-            ),
-        itemCount: 5);
+      shrinkWrap: true,
+      cacheExtent: 10,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) => ListBox(
+          dataContainer: expanseListInfo(
+              "Hardware", index % 2 == 0, "Modification", 10000)),
+      separatorBuilder: (context, index) => const SizedBox(
+        height: TSizes.defaultSpace,
+      ),
+      itemCount: 5,
+    );
   }
+}
+
+Widget expanseListInfo(
+    String title, bool isExpance, String tagtitle, int amount) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(
+        children: [
+          Text(title,
+              style: TextStyle(
+                color: TColors.secondary,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 0.15,
+              )),
+          const SizedBox(width: TSizes.spaceBtwItems),
+          Tag(title: tagtitle)
+        ],
+      ),
+      const SizedBox(height: TSizes.defaultSpace),
+      Row(
+        children: [
+          Icon(isExpance ? Iconsax.send4 : Iconsax.received4,
+              size: TSizes.fontSizeLg),
+          const SizedBox(width: TSizes.xs),
+          Text(
+            '${amount} USD',
+            style: TextStyle(
+              color: TColors.secondary,
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.13,
+            ),
+          ),
+        ],
+      )
+    ],
+  );
 }

@@ -13,16 +13,20 @@ class AppLayout extends StatefulWidget {
 class _AppLayoutState extends State<AppLayout> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Worlwise the  powerful friend",
-      theme: appThemeData,
-      home: const Scaffold(
-        backgroundColor: TColors.secondary,
-        body: Material(color: Colors.transparent, child: NavigatorLayout()),
+    return ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+      child: MaterialApp(
+        title: "Workwise the powerful friend",
+        theme: AppTheme.appThemeData,
+        home: const Scaffold(
+          backgroundColor: TColors.secondary,
+          body: Material(
+            color: Colors.transparent,
+            child: NavigatorLayout(),
+          ),
+        ),
+        debugShowCheckedModeBanner: false,
       ),
-      debugShowCheckedModeBanner: false,
-      scrollBehavior:
-          ScrollConfiguration.of(context).copyWith(scrollbars: false),
     );
   }
 }

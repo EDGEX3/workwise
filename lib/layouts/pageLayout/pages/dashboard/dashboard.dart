@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/cardsLayout.dart';
+import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/greeting.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/navbar.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/utils/const/text.dart';
 import 'package:workwise/widgets/expanse/expanse.dart';
+
+import 'widget/transactionAdd.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -12,26 +14,37 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Column(
+      body: Stack(
         children: [
-          NavBar(),
-          SizedBox(
-            height: TSizes.spaceBtwSections,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  CardSection(),
-                  SizedBox(
-                    height: TSizes.spaceBtwSections,
+          Padding(
+            padding: const EdgeInsets.only(
+              right: TSizes.spaceBtwSections,
+              left: TSizes.spaceBtwSections,
+              top: TSizes.spaceBtwSections,
+            ),
+            child: Column(
+              children: [
+                const NavBar(),
+                SizedBox(height: TSizes.spaceBtwSections),
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        greeting('Himanshu'),
+                        SizedBox(height: TSizes.spaceBtwSections),
+                        const CardSection(),
+                        SizedBox(height: TSizes.spaceBtwSections),
+                        const Expanse(),
+                      ],
+                    ),
                   ),
-                  Expanse(),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
+          const TransactionAdd()
         ],
       ),
     );

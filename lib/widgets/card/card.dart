@@ -18,7 +18,7 @@ class OrderCard extends StatelessWidget {
         padding: EdgeInsets.all(TSizes.cardPadding),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-          gradient: TColors.whiteGradients,
+          color: TColors.white10,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,7 +73,7 @@ class OrderCard extends StatelessWidget {
           children: [
             Text(
               "Total Amount",
-              style: mid,
+              style: TextStyles.mid,
             ),
             SizedBox(
               height: TSizes.defaultMinSpace,
@@ -99,7 +99,7 @@ class OrderCard extends StatelessWidget {
       padding: EdgeInsets.only(bottom: TSizes.defaultMinSpace),
       child: Text(
         text,
-        style: small,
+        style: TextStyles.small,
       ),
     );
   }

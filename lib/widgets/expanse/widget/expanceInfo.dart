@@ -13,19 +13,25 @@ class ExpanseInfo extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Text("December 29",
-        textAlign: TextAlign.left,
-        style: semmd,),
-        SizedBox(height: TSizes.defaultMinSpace,),
-             Text("Friday",
-             textAlign: TextAlign.left,
-        style: semmd,),
+          children: const [
+            Text(
+              "December 29",
+              textAlign: TextAlign.left,
+              style: TextStyles.semmd,
+            ),
+            SizedBox(height: TSizes.defaultMinSpace),
+            Text(
+              "Friday",
+              textAlign: TextAlign.left,
+              style: TextStyles.semmd,
+            ),
           ],
         ),
-        Text("-400,000 USD",
-        textAlign: TextAlign.right,
-        style: semmd,)
+        const Text(
+          "-400,000 USD",
+          textAlign: TextAlign.right,
+          style: TextStyles.semmd,
+        ),
       ],
     );
   }

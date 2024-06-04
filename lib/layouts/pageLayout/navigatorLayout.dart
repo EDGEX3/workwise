@@ -1,45 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workwise/layouts/pageLayout/pages/controllers/NavigatorController.dart';
-import 'package:workwise/layouts/pageLayout/pages/dashboard/dashboard.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
+import 'package:workwise/widgets/drawer/Appdrawer.dart';
+import 'package:workwise/widgets/drawer/drawerController.dart';
 
 class NavigatorLayout extends StatelessWidget {
   const NavigatorLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final NavigatorController navigatorController = Get.put(NavigatorController());
-
-    return Stack(
-      children: [
-        Text("hi"),
-        Obx(() {
-          return AnimatedContainer(
-            alignment: Alignment.centerRight,
-            margin: EdgeInsetsDirectional.only(start: navigatorController.Navcontainer['width'] as double),
-            duration: Duration(milliseconds: 500),
-            curve: Curves.linear,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: TColors.primary,
-            ),
-            child: Material(
-              color: Colors.transparent,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  right: TSizes.spaceBtwSections,
-                  left: TSizes.spaceBtwSections,
-                  top: TSizes.spaceBtwSections,
+    final NavigatorController navigatorController =
+        Get.put(NavigatorController());
+    final Drawercontroller drawercontroller = Get.put(Drawercontroller());
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Stack(
+          children: [
+            const AppDrawer(),
+            Obx(() {
+              return AnimatedContainer(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                alignment: Alignment.center,
+                margin: EdgeInsetsDirectional.only(
+                    start: navigatorController.navContainer['width'] as double),
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.linear,
+                height: constraints.maxHeight,
+                width: constraints.maxWidth,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                        navigatorController.navContainer['open'] == true
+                            ? TSizes.borderRadiusxLg
+                            : 0.0),
+                    bottomLeft: Radius.circular(
+                        navigatorController.navContainer['open'] == true
+                            ? TSizes.borderRadiusxLg
+                            : 0.0),
+                  ),
+                  color: TColors.primary,
                 ),
-                child: Dashboard(),
-              ),
-            ),
-          );
-        }),
-      ],
+                child: Material(
+                  color: Colors.transparent,
+                  child: Obx(() => drawercontroller.getScreen()),
+                ),
+              );
+            }),
+          ],
+        );
+      },
     );
   }
 }
