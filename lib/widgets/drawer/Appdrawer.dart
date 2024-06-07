@@ -1,7 +1,7 @@
 // File: app_drawer.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/controllers/NavigatorController.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/drawer/drawerController.dart';
@@ -18,6 +18,7 @@ class AppDrawer extends StatelessWidget {
         Get.put(NavigatorController());
     return Drawer(
       backgroundColor: Colors.transparent,
+      width: 320,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 26.0, vertical: 34.0),
         child: Column(
@@ -54,7 +55,11 @@ class AppDrawer extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = MenuItems.Items[index];
                     return ListTile(
-                      title: Text(item.title),
+                      title: Text(
+                        item.title,
+                        selectionColor: TColors.primary,
+                        style: TextStyle(color: TColors.black60),
+                      ),
                       selected: currentpage == item,
                       hoverColor: TColors.black10,
                       leading: Icon(item.icon),
@@ -108,7 +113,8 @@ class AppDrawer extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwItems,
             ),
-            const User(username: 'Himanshu Patel', email: 'Himanshu Patel')
+            const User(
+                username: 'Himanshu Patel', email: 'HimanshuPatel@pegvin.com')
           ],
         ),
       ),

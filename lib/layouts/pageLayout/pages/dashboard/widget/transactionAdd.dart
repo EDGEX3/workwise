@@ -49,14 +49,14 @@ class TransactionAddState extends State<TransactionAdd> {
               alignment: AlignmentDirectional.centerStart,
               children: [
                 AnimatedContainer(
-                  duration: Duration(milliseconds: 400),
+                  duration: Duration(milliseconds: 200),
                   alignment: state ? Alignment.centerLeft : Alignment.centerRight,
                   width: 102,
                   child: coustomButton(
                     width: 46,
                     height: 46,
                     color: TColors.white25,
-                    icon: Icon(
+                    wedget: Icon(
                       Iconsax.send4,
                       color: TColors.secondary,
                       size: 20.0,
@@ -67,14 +67,14 @@ class TransactionAddState extends State<TransactionAdd> {
                   ),
                 ),
                 AnimatedContainer(
-                  duration: const Duration(milliseconds: 400),
+                  duration: const Duration(milliseconds: 200),
                   alignment: state ? Alignment.centerRight : Alignment.center,
                   width: 158,
                   child: coustomButton(
                     width: 46,
                     height: 46,
                     color: TColors.white25,
-                    icon: Icon(
+                    wedget: Icon(
                       Iconsax.received4,
                       color: TColors.secondary,
                       size: 20.0,
@@ -91,7 +91,7 @@ class TransactionAddState extends State<TransactionAdd> {
                     width: 46,
                     height: 46,
                     color: TColors.secondary,
-                    icon: Icon(
+                    wedget: Icon(
                       state?Iconsax.close_circle4:Iconsax.add_circle4,
                       color: TColors.primary,
                       size: 20.0,

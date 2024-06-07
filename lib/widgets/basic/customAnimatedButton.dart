@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/controllers/NavigatorController.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 

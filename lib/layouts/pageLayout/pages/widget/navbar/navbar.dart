@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/controllers/NavigatorController.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/widgets/basic/customAnimatedButton.dart';
 
@@ -26,7 +26,7 @@ class NavBar extends StatelessWidget {
           angle: 3.14,
           onClick: () {
             navigatorController.updateWidth(
-              navigatorController.navContainer["open"] != true ? 320 : 0.0,
+              navigatorController.navContainer["open"] != true ? 345 : 0.0,
             );
           },
         ),

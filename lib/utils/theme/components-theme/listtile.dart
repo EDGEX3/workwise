@@ -9,6 +9,8 @@ ListTileThemeData tlisttile = ListTileThemeData(
     fontSize: 20,
     color: TColors.black60,
     fontWeight: FontWeight.w500,
+    fontFamily: "popins"
   ),
   tileColor: Colors.transparent,
+  
 );

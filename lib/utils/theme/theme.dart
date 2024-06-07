@@ -7,12 +7,13 @@ import 'package:workwise/utils/theme/components-theme/listtile.dart';
 class AppTheme {
   static final ThemeData appThemeData = ThemeData(
     useMaterial3: true,
+    fontFamilyFallback: ["popins"],
     colorScheme: ColorScheme.fromSeed(
       seedColor: TColors.secondary,
       brightness: Brightness.dark,
     ),
     cardTheme: tCard,
-    fontFamily: 'popins',
+    fontFamily: "popins",
     iconTheme: const IconThemeData(
       color: TColors.secondary,
       size: TSizes.iconMd,

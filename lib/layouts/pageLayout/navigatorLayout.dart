@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/controllers/NavigatorController.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/drawer/Appdrawer.dart';
@@ -25,7 +25,7 @@ class NavigatorLayout extends StatelessWidget {
                 alignment: Alignment.center,
                 margin: EdgeInsetsDirectional.only(
                     start: navigatorController.navContainer['width'] as double),
-                duration: const Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 400),
                 curve: Curves.linear,
                 height: constraints.maxHeight,
                 width: constraints.maxWidth,
@@ -44,7 +44,9 @@ class NavigatorLayout extends StatelessWidget {
                 ),
                 child: Material(
                   color: Colors.transparent,
-                  child: Obx(() => drawercontroller.getScreen()),
+                  child: Obx(
+                    () => drawercontroller.getScreen(),
+                  ),
                 ),
               );
             }),

@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   iconsax: ^0.0.8
   get: ^4.6.6
+  modal_bottom_sheet: ^3.0.0
   
 
 dev_dependencies:

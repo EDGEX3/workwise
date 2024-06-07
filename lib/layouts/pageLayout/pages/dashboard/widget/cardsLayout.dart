@@ -20,7 +20,7 @@ class CardSection extends StatelessWidget {
               return coustomButton(
                 width: 50,
                 height: 250,
-                icon: const Icon(Iconsax.add_square4),
+                wedget: const Icon(Iconsax.add_square4),
                 onClick: () {},
               );
             },

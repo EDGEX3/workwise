@@ -11,7 +11,6 @@ class ListBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
           minHeight: TSizes.listMinHight,

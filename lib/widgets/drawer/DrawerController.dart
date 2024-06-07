@@ -23,9 +23,9 @@ class Drawercontroller extends GetxController {
   Widget getScreen() {
     switch (currentItem.value) {
       case MenuItems.Dashboard:
-        return Dashboard();
+        return Builder(builder: (context) =>const Dashboard(),key: Key("dashboard"),);
       case MenuItems.Orders:
-        return Orders();
+        return Builder(builder: (context) =>const Orders(),key: Key("Orders"),);
       case MenuItems.Inventory:
         return Inventory();
       case MenuItems.Billing:

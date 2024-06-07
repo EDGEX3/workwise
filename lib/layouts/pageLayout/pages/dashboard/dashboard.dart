@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/cardsLayout.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/greeting.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/navbar.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/navbar.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/expanse/expanse.dart';
 

@@ -20,7 +20,7 @@ Widget greeting(String username) {
         style: TextStyle(
           color: TColors.textSecondary,
           fontSize: 24,
-          fontWeight: FontWeight.w100,
+          fontWeight: FontWeight.w300,
         ),
       ),
     ],
