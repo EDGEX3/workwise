@@ -20,6 +20,7 @@ class InputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
+      
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(width: 1, color: TColors.white10)),
       ),
@@ -40,21 +41,24 @@ class InputField extends StatelessWidget {
                 Text(
                   labelText,
                   style: TextStyle(
-                      color: TColors.secondary,
+                      color: TColors.white30,
                       fontSize: 14,
                       fontWeight: FontWeight.w400),
                 ),
-                TextField(
-                  controller: controller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: hintText,
+                Container(
+                  height: 24,
+                  child: TextField(
+                    controller: controller,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: hintText,
+                    ),
+                    style: TextStyle(
+                        color: TColors.secondary,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
                   ),
-                  style: TextStyle(
-                      color: TColors.secondary,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                ),
+                )
               ],
             ),
           ),
