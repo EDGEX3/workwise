@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/customers/widget/customerinfo.dart';
 import 'package:workwise/widgets/listbox/listbox.dart';
-import 'package:workwise/widgets/order/widget/orderinfo.dart';
 
 class CustomerList extends StatelessWidget {
   const CustomerList({super.key});
