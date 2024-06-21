@@ -1,4 +1,4 @@
-name: WorkWise CI/CD
+name: Flutter CI/CD
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: 'latest'
+        flutter-version: 'stable' # Use the stable channel for Flutter
 
     - name: Install dependencies
       run: flutter pub get
@@ -46,3 +46,51 @@ jobs:
       with:
         name: app-release.ipa
         path: build/ios/ipa/app-release.ipa
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Create Git Tag
+      id: tag
+      run: |
+        VERSION=$(date +'%Y.%m.%d-%H%M%S')
+        git tag $VERSION
+        echo "::set-output name=VERSION::$VERSION"
+        git push origin $VERSION
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.tag.outputs.VERSION }}
+        release_name: Release ${{ steps.tag.outputs.VERSION }}
+        body: |
+          Release description here
+        draft: false
+        prerelease: false
+
+    - name: Upload APK to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/app/outputs/flutter-apk/app-release.apk
+        asset_name: app-release.apk
+        asset_content_type: application/vnd.android.package-archive
+
+    - name: Upload IPA to Release
+      if: runner.os == 'macOS'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/ios/ipa/app-release.ipa
+        asset_name: app-release.ipa
+        asset_content_type: application/octet-stream
