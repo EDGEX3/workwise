@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/widgets/basic/coustomButton.dart';
+import 'package:workwise/widgets/basic/CustomButton.dart';
 import 'package:workwise/widgets/card/card.dart';
 
 class CardSection extends StatelessWidget {
@@ -17,10 +17,10 @@ class CardSection extends StatelessWidget {
           left: 0,
           child: Builder(
             builder: (context) {
-              return coustomButton(
+              return customButton(
                 width: 50,
                 height: 250,
-                wedget: const Icon(Iconsax.add_square4),
+                wedge: const Icon(Iconsax.add_square4),
                 onClick: () {},
               );
             },

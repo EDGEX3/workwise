@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workwise/utils/const/colors.dart';
 
-Widget CoustomTitle(String title) {
+Widget CustomTitle(String title) {
   return Text(
     title,
     style: TextStyle(

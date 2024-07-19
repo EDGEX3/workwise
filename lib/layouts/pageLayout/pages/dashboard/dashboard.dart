@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/cardsLayout.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/widget/greeting.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/navbar/navbar.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/expanse/expanse.dart';
 
@@ -20,11 +19,9 @@ class Dashboard extends StatelessWidget {
             padding: const EdgeInsets.only(
               right: TSizes.spaceBtwSections,
               left: TSizes.spaceBtwSections,
-              top: TSizes.spaceBtwSections,
             ),
             child: Column(
               children: [
-                const NavBar(),
                 SizedBox(height: TSizes.spaceBtwSections),
                 Expanded(
                   child: SingleChildScrollView(
