@@ -18,51 +18,56 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
-      
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 1, color: TColors.white10)),
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minWidth: 200,
+        maxWidth: 350,
       ),
-      child: Row(
-        children: [
-          if (icon != null) ...[
-            Icon(
-              icon,
-              size: TSizes.iconMd,
-              color: TColors.secondary,
-            ),
-            SizedBox(width: 20),
-          ],
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  labelText,
-                  style: TextStyle(
-                      color: TColors.white30,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
-                ),
-                Container(
-                  height: 24,
-                  child: TextField(
-                    controller: controller,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: hintText,
-                    ),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(width: 1, color: TColors.white10)),
+        ),
+        child: Row(
+          children: [
+            if (icon != null) ...[
+              Icon(
+                icon,
+                size: TSizes.iconMd,
+                color: TColors.secondary,
+              ),
+              SizedBox(width: 20),
+            ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    labelText,
                     style: TextStyle(
-                        color: TColors.secondary,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                        color: TColors.white30,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
                   ),
-                )
-              ],
+                  Container(
+                    height: 24,
+                    child: TextField(
+                      controller: controller,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: hintText,
+                      ),
+                      style: TextStyle(
+                          color: TColors.secondary,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
