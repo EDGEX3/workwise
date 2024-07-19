@@ -1,5 +1,8 @@
+// drawerController.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:workwise/widgets/template/menuitem.dart';
+import 'package:workwise/widgets/template/menuitems.dart';
 import 'package:workwise/layouts/pageLayout/pages/Billing/billing.dart';
 import 'package:workwise/layouts/pageLayout/pages/Buy/buy.dart';
 import 'package:workwise/layouts/pageLayout/pages/Customers/customers.dart';
@@ -8,24 +11,32 @@ import 'package:workwise/layouts/pageLayout/pages/Inventory/inventory.dart';
 import 'package:workwise/layouts/pageLayout/pages/Orders/orders.dart';
 import 'package:workwise/layouts/pageLayout/pages/Sells/sells.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/dashboard.dart';
-import 'package:workwise/widgets/template/menuitem.dart';
-import 'package:workwise/widgets/template/menuitems.dart';
 
-class Drawercontroller extends GetxController {
-  var currentItem = MenuItems.Items[0].obs;
+class NavDrawerController extends GetxController {
+  var currentItem = [MenuItems.Items[0]].obs;
 
-  void navigateto(MenuItem item) {
-    currentItem.value = item;
+  void navigateTo(MenuItem item) {
+    currentItem.first = item;
     print("Navigating to: ${item.title}"); // Debug print
-    // Add navigation logic here if needed
+  }
+
+  void navigatePush(MenuItem item) {
+    currentItem.add(item);
+    print("Navigating to: ${item.title}"); // Debug print
+  }
+
+  void navigateBack() {
+    if (currentItem.length > 1) {
+      currentItem.removeLast();
+    }
   }
 
   Widget getScreen() {
-    switch (currentItem.value) {
+    switch (currentItem.last) {
       case MenuItems.Dashboard:
-        return Builder(builder: (context) =>const Dashboard(),key: Key("dashboard"),);
+        return const Dashboard(key: Key("dashboard"));
       case MenuItems.Orders:
-        return Builder(builder: (context) =>const Orders(),key: Key("Orders"),);
+        return const Orders(key: Key("orders"));
       case MenuItems.Inventory:
         return Inventory();
       case MenuItems.Billing:
@@ -39,7 +50,7 @@ class Drawercontroller extends GetxController {
       case MenuItems.Buy:
         return Buy();
       default:
-        return Dashboard();
+        return const Dashboard(key: Key("dashboard"));
     }
   }
 }

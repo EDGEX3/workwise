@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/widgets/basic/coustomButton.dart';
+import 'package:workwise/widgets/basic/CustomButton.dart';
 
 class TransactionAdd extends StatefulWidget {
   const TransactionAdd({Key? key}) : super(key: key);
@@ -52,11 +52,11 @@ class TransactionAddState extends State<TransactionAdd> {
                   duration: Duration(milliseconds: 200),
                   alignment: state ? Alignment.centerLeft : Alignment.centerRight,
                   width: 102,
-                  child: coustomButton(
+                  child: customButton(
                     width: 46,
                     height: 46,
                     color: TColors.white25,
-                    wedget: Icon(
+                    wedge: Icon(
                       Iconsax.send4,
                       color: TColors.secondary,
                       size: 20.0,
@@ -70,11 +70,11 @@ class TransactionAddState extends State<TransactionAdd> {
                   duration: const Duration(milliseconds: 200),
                   alignment: state ? Alignment.centerRight : Alignment.center,
                   width: 158,
-                  child: coustomButton(
+                  child: customButton(
                     width: 46,
                     height: 46,
                     color: TColors.white25,
-                    wedget: Icon(
+                    wedge: Icon(
                       Iconsax.received4,
                       color: TColors.secondary,
                       size: 20.0,
@@ -87,11 +87,11 @@ class TransactionAddState extends State<TransactionAdd> {
                 Container(
                   width: 102,
                   alignment: Alignment.centerRight,
-                  child: coustomButton(
+                  child: customButton(
                     width: 46,
                     height: 46,
                     color: TColors.secondary,
-                    wedget: Icon(
+                    wedge: Icon(
                       state?Iconsax.close_circle4:Iconsax.add_circle4,
                       color: TColors.primary,
                       size: 20.0,

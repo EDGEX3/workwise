@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/widgets/drawer/drawerController.dart';
+import 'DrawerController.dart';
 import 'package:workwise/widgets/template/menuitems.dart';
 import 'package:workwise/widgets/user/user.dart';
 
@@ -13,7 +13,7 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Drawercontroller drawercontroller = Get.put(Drawercontroller());
+    final drawercontroller = Get.put(NavDrawerController());
     final NavigatorController navigatorController =
         Get.put(NavigatorController());
     return Drawer(
@@ -50,7 +50,7 @@ class AppDrawer extends StatelessWidget {
             const SizedBox(height: TSizes.gl),
             Expanded(
               child: Obx(() {
-                var currentpage = drawercontroller.currentItem.value;
+                var CurrentPage = drawercontroller.currentItem.last;
                 return ListView.separated(
                   itemBuilder: (context, index) {
                     final item = MenuItems.Items[index];
@@ -60,7 +60,7 @@ class AppDrawer extends StatelessWidget {
                         selectionColor: TColors.primary,
                         style: TextStyle(color: TColors.black60),
                       ),
-                      selected: currentpage == item,
+                      selected: CurrentPage == item,
                       hoverColor: TColors.black10,
                       leading: Icon(item.icon),
                       shape: RoundedRectangleBorder(
@@ -68,8 +68,8 @@ class AppDrawer extends StatelessWidget {
                             BorderRadius.circular(TSizes.borderRadiusSm + 1),
                       ),
                       onTap: () {
-                        drawercontroller.currentItem.value = item;
-                        drawercontroller.navigateto(item);
+                        drawercontroller.currentItem.first=item;
+                        drawercontroller.navigateTo(item);
                         navigatorController.updateWidth(0.0);
                       },
                     );
@@ -84,15 +84,15 @@ class AppDrawer extends StatelessWidget {
             ListTile(
               title: Text(MenuItems.Settings.title),
               selected:
-                  drawercontroller.currentItem.value == MenuItems.Settings,
+                  drawercontroller.currentItem.last == MenuItems.Settings,
               hoverColor: TColors.black10,
               leading: Icon(MenuItems.Settings.icon),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(TSizes.borderRadiusSm + 1),
               ),
               onTap: () {
-                drawercontroller.currentItem.value = MenuItems.Settings;
-                drawercontroller.navigateto(MenuItems.Settings);
+                drawercontroller.currentItem.add(MenuItems.Settings);
+                drawercontroller.navigateTo(MenuItems.Settings);
                 navigatorController.updateWidth(0.0);
               },
             ),
