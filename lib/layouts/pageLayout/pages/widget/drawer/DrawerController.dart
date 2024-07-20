@@ -1,6 +1,8 @@
 // drawerController.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:workwise/layouts/pageLayout/pages/AddSells/addSells.dart';
+import 'package:workwise/layouts/pageLayout/pages/Settings/settings.dart';
 import 'package:workwise/widgets/template/menuitem.dart';
 import 'package:workwise/widgets/template/menuitems.dart';
 import 'package:workwise/layouts/pageLayout/pages/Billing/billing.dart';
@@ -50,7 +52,9 @@ class NavDrawerController extends GetxController {
       case MenuItems.Buy:
         return Buy();
       case MenuItems.AddSells:
-        return Buy();
+        return AddSells();
+      case MenuItems.Settings:
+        return Settings();      
       default:
         return const Dashboard(key: Key("dashboard"));
     }

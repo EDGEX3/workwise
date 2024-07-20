@@ -8,6 +8,7 @@ import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/basic/CustomButton.dart';
 import 'package:workwise/widgets/basic/Title.dart';
+import 'package:workwise/widgets/customers/customerlist.dart';
 import 'package:workwise/widgets/order/orderlist.dart';
 
 class Orders extends StatelessWidget {
@@ -58,23 +59,29 @@ class Orders extends StatelessWidget {
                       onClick: () {
                         showSheet(
                             context,
-                            Column(
-                              children: [
-                                Container(
-                                  width: 60,
-                                  height: 5,
-                                  color: TColors.white30,
-                                ),
-                                const SizedBox(
-                                  height: TSizes.spaceBtwSections,
-                                ),
-                                Searchbar(
-                                    actionIcon: Icon(Iconsax.close_circle4),
-                                    fn: () {
-                                      Navigator.pop(context);
-                                    })
-                              ],
-                            ));
+                            SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 60,
+                                    height: 5,
+                                    color: TColors.white30,
+                                  ),
+                                  const SizedBox(
+                                    height: TSizes.spaceBtwSections,
+                                  ),
+                                  Searchbar(
+                                      actionIcon: Icon(Iconsax.close_circle4),
+                                      fn: () {
+                                        Navigator.pop(context);
+                                      }),
+                                  const SizedBox(
+                                      height: TSizes.spaceBtwSections),
+                                  const CustomerList(),
+                                ],
+                              ),
+                            )
+                          );
                       },
                     ),
                   ),
@@ -107,7 +114,7 @@ void showSheet(BuildContext ctx, Widget childs) {
         height: 508,
         child: ClipRect(
           child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
               child: Padding(
                 padding: const EdgeInsets.all(TSizes.lg),
                 child: childs,
