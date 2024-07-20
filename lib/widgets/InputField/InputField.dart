@@ -1,17 +1,22 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Import for SVG support
 
 class InputField extends StatelessWidget {
   final String labelText;
   final String hintText;
-  final IconData? icon;
+  final String? iconPath; // Optional parameter for asset icon path
+  final IconData? icon;    // Optional parameter for Iconsax or other icons
   final TextEditingController? controller;
 
   const InputField({
     super.key,
     required this.labelText,
     required this.hintText,
+    this.iconPath,
     this.icon,
     this.controller,
   });
@@ -30,7 +35,15 @@ class InputField extends StatelessWidget {
         ),
         child: Row(
           children: [
-            if (icon != null) ...[
+            if (iconPath != null) ...[
+              SvgPicture.asset(
+                iconPath!,
+                width: TSizes.iconMd,
+                height: TSizes.iconMd,
+                color: TColors.secondary,
+              ),
+              SizedBox(width: 20),
+            ] else if (icon != null) ...[
               Icon(
                 icon,
                 size: TSizes.iconMd,
@@ -46,7 +59,7 @@ class InputField extends StatelessWidget {
                     labelText,
                     style: TextStyle(
                         color: TColors.white30,
-                        fontSize: 14,
+                        fontSize: TSizes.fontSizeSm,
                         fontWeight: FontWeight.w400),
                   ),
                   Container(
@@ -59,7 +72,7 @@ class InputField extends StatelessWidget {
                       ),
                       style: TextStyle(
                           color: TColors.secondary,
-                          fontSize: 16,
+                          fontSize: TSizes.fontSizeMd,
                           fontWeight: FontWeight.w500),
                     ),
                   )

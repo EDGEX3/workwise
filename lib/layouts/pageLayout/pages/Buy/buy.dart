@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/navbar/navbar.dart';
+// import 'package:workwise/layouts/pageLayout/pages/widget/navbar/navbar.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/searchbar/searchbar.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';

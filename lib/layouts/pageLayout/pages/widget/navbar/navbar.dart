@@ -48,7 +48,7 @@ class NavBar extends StatelessWidget {
               ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Image.asset(
-                "icons/avatar.png",
+                "assets/icons/avatar.png",
                 fit: BoxFit.fill,
               ),
             ),

@@ -85,7 +85,7 @@ class OrderCard extends StatelessWidget {
           ],
         ),
         Image.asset(
-          "qr.png",
+          "assets/qr.png",
           width: 64,
           height: 64,
           color: TColors.secondary,

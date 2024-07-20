@@ -25,7 +25,7 @@ class User extends StatelessWidget {
             height: 50,
             decoration: const ShapeDecoration(
               image: DecorationImage(
-                image: AssetImage("icons/avatar.png"),
+                image: AssetImage("assets/icons/avatar.png"),
                 fit: BoxFit.fill,
               ),
               shape: OvalBorder(

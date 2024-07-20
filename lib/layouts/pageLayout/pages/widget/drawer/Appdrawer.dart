@@ -30,7 +30,7 @@ class AppDrawer extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Image.asset(
-                    "icons/mini.png",
+                    "assets/icons/mini.png",
                     color: TColors.primary,
                     height: 38,
                     width: 38,
