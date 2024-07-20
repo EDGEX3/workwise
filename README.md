@@ -32,6 +32,9 @@ Full fledged cross platform erp application.
                 └── 📁Sells
                     └── sells.dart
                 └── 📁widget
+                    └── 📁drawer
+                        └── Appdrawer.dart
+                        └── DrawerController.dart
                     └── 📁navbar
                         └── 📁controllers
                             └── NavigatorController.dart
@@ -46,6 +49,8 @@ Full fledged cross platform erp application.
             └── colors.dart
             └── size.dart
             └── text.dart
+        └── 📁datastrcture
+            └── Stack.dart
         └── 📁theme
             └── 📁components-theme
                 └── cards.dart
@@ -53,14 +58,28 @@ Full fledged cross platform erp application.
             └── theme.dart
     └── 📁widgets
         └── 📁basic
-            └── coustomButton.dart
             └── customAnimatedButton.dart
+            └── CustomButton.dart
             └── title.dart
+        └── 📁buy
+            └── buylist.dart
+            └── 📁widget
+                └── buyinfo.dart
         └── 📁card
             └── card.dart
-        └── 📁drawer
-            └── Appdrawer.dart
-            └── DrawerController.dart
+        └── 📁ComboBox
+            └── ComboBox.dart
+        └── 📁customers
+            └── customerlist.dart
+            └── 📁widget
+                └── customerinfo.dart
+                └── tagDropdown.dart
+        └── 📁dailyexpanse
+            └── dailyexpanse.dart
+            └── 📁widget
+                └── dailyexpanseInfo.dart
+                └── dailyexpanseList.dart
+                └── tag.dart
         └── 📁expanse
             └── expanse.dart
             └── 📁widget
@@ -69,16 +88,23 @@ Full fledged cross platform erp application.
                 └── tag.dart
         └── 📁InputField
             └── InputField.dart
+        └── 📁Inventory
+            └── inventorylist.dart
+            └── 📁widget
+                └── inventoryinfo.dart
         └── 📁listbox
             └── listbox.dart
         └── 📁order
             └── orderlist.dart
             └── 📁widget
                 └── orderinfo.dart
+        └── 📁sells
+            └── sellslist.dart
+            └── 📁widget
+                └── sellsinfo.dart
         └── 📁template
             └── menuitem.dart
             └── menuitems.dart
         └── 📁user
             └── user.dart
-
 ```
