@@ -20,7 +20,6 @@ class Billing extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const NavBar(),
           SizedBox(height: TSizes.spaceBtwSections),
           Expanded(
             child: SingleChildScrollView(

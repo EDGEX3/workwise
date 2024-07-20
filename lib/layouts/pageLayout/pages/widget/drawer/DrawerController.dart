@@ -49,6 +49,8 @@ class NavDrawerController extends GetxController {
         return Customers();
       case MenuItems.Buy:
         return Buy();
+      case MenuItems.AddSells:
+        return Buy();
       default:
         return const Dashboard(key: Key("dashboard"));
     }

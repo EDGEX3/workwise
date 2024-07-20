@@ -5,9 +5,9 @@ import 'package:workwise/utils/const/size.dart';
 
 class ListBox extends StatelessWidget {
   final Widget dataContainer;
-
-  ListBox({super.key, required this.dataContainer});
-
+  VoidCallback onClick;
+  ListBox({super.key, required this.dataContainer, this.onClick = callBack});
+  static void callBack() {}
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,12 +19,14 @@ class ListBox extends StatelessWidget {
         ),
         child: DecoratedBox(
           decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
             color: TColors.white10,
           ),
           child: InkWell(
-            borderRadius: const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
-            onTap: () => {},
+            borderRadius:
+                const BorderRadius.all(Radius.circular(TSizes.listRadiusLg)),
+            onTap: onClick,
             child: Padding(
               padding: const EdgeInsets.all(TSizes.listPadding),
               child: Row(

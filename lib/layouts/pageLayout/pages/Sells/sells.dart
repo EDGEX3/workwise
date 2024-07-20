@@ -3,12 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:workwise/layouts/pageLayout/pages/widget/navbar/navbar.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/searchbar/searchbar.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/widgets/basic/coustomButton.dart';
-import 'package:workwise/widgets/basic/title.dart';
+import 'package:workwise/widgets/basic/Title.dart';
+import 'package:workwise/widgets/basic/customButton.dart';
 import 'package:workwise/widgets/sells/sellslist.dart';
 
 class Sells extends StatelessWidget {
@@ -29,7 +28,6 @@ class Sells extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const NavBar(),
                 SizedBox(height: TSizes.spaceBtwSections),
                 Expanded(
                   child: SingleChildScrollView(
@@ -39,14 +37,14 @@ class Sells extends StatelessWidget {
                       children: [
                         Searchbar(),
                         const SizedBox(height: TSizes.spaceBtwSections),
-                        CoustomTitle("Sells"),
+                        CustomTitle("Sells"),
                         const SizedBox(height: TSizes.spaceBtwSections),
                         Container(
                           width: double.infinity,
-                          child: coustomButton(
+                          child: customButton(
                             width: double.infinity,
                             height: 50,
-                            wedget: Row(
+                            wedge: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Icon(Iconsax.add_square4),
@@ -72,8 +70,15 @@ class Sells extends StatelessWidget {
                                         height: 5,
                                         color: TColors.white30,
                                       ),
-                                      const SizedBox(height: TSizes.spaceBtwSections,),
-                                      const Searchbar()
+                                      const SizedBox(
+                                        height: TSizes.spaceBtwSections,
+                                      ),
+                                      Searchbar(
+                                          actionIcon:
+                                              Icon(Iconsax.close_circle4),
+                                          fn: () {
+                                            Navigator.pop(context);
+                                          })
                                     ],
                                   ));
                             },
@@ -111,10 +116,11 @@ void showSheet(BuildContext ctx, Widget childs) {
         height: 508,
         child: ClipRect(
           child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), child: Padding(
-            padding: const EdgeInsets.all(TSizes.lg),
-            child: childs,
-          )),
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Padding(
+                padding: const EdgeInsets.all(TSizes.lg),
+                child: childs,
+              )),
         ),
       );
     },
