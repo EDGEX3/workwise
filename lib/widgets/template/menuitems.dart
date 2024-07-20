@@ -15,6 +15,7 @@ class MenuItems {
 
   // create child component
   static const MenuItem AddSells =MenuItem("AddSells", Iconsax.money_recive4);
+  static const MenuItem OrderEditCreate =MenuItem("OrderEditCreate", Iconsax.box4);
 
   static const List<MenuItem> Items = [
     Dashboard,
@@ -24,6 +25,7 @@ class MenuItems {
     Billing,
     Sells,
     Buy,
-    DailyExpanse
+    DailyExpanse,
+    OrderEditCreate
   ];
 }

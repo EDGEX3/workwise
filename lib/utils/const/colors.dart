@@ -9,6 +9,7 @@ class TColors {
   static const Color textSecondary = TColors.secondary;
   static const Color textShades = TColors.white30;
 //Shades theme color
+  static const Color white60 = Color.fromARGB(200, 246, 246, 245);
   static const Color white30 = Color(0x4DF6F6F5);
   static const Color white25 = Color(0x40F6F6F5);
   static const Color white10 = Color(0x1AF6F6F5);
