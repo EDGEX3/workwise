@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/drawer/Appdrawer.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/drawer/DrawerController.dart';
 import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
