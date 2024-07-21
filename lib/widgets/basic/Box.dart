@@ -4,14 +4,16 @@ import 'package:workwise/utils/const/size.dart';
 
 class BoxContainer extends StatelessWidget {
   final Widget child;
-  final double height,width;
-  const BoxContainer({super.key,required this.child,required this.height, required this.width});
+  // final double height,width;
+  // const BoxContainer({super.key,required this.child,required this.height, required this.width});
+  final double width;
+  const BoxContainer({super.key,required this.child, required this.width});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: height,
+      // height: height,
       decoration: BoxDecoration(
           color: TColors.white10,
           border: Border.all(

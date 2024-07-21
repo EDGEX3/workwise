@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+// import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/OrderEditCreate/OrderInfo.dart';
+import 'package:workwise/widgets/OrderEditCreate/TableBox.dart';
 import 'package:workwise/widgets/OrderEditCreate/Tag.dart';
 import 'package:workwise/widgets/basic/Box.dart';
 import 'package:workwise/widgets/basic/CustomButton.dart';
+import 'package:workwise/widgets/basic/Form.dart';
 import 'package:workwise/widgets/basic/Title.dart';
 
 class OrderEditCreate extends StatelessWidget {
@@ -43,28 +46,72 @@ class OrderEditCreate extends StatelessWidget {
                         ],
                       ),
                       customButton(
-                          width: 50,
-                          height: 50,
-                          wedge: Icon(Iconsax.printer4),
-                          onClick: () {},
-                          boxBorderColor: TColors.white30),
+                        width: 50,
+                        height: 50,
+                        wedge: Icon(Iconsax.printer4),
+                        onClick: () {},
+                        boxBorderColor: TColors.white30,
+                      ),
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   OrderInfo(
-                      cid: "#EDG21081852",
-                      name: "Krunal Bhadesiya",
-                      phoneno: "+91 9725636621",
-                      email: "krunlbhadesiya@lotusgroup.tech",
-                      address1: "First Floor,Lotus Corporate Office",
-                      address2: "Tech City-390001,Gandhinagar,Gujarat"),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                    cid: "#EDG21081852",
+                    name: "Krunal Bhadesiya",
+                    phoneno: "+91 9725636621",
+                    email: "krunlbhadesiya@lotusgroup.tech",
+                    address1: "First Floor,Lotus Corporate Office",
+                    address2: "Tech City-390001,Gandhinagar,Gujarat",
+                  ),
+                  SizedBox(height: TSizes.spaceBtwSections),
                   Container(
-                      height: 100,
-                      child: BoxContainer(
-                          width: MediaQuery.of(context).size.width * 0.7,
-                          height: double.maxFinite,
-                          child: Text("box")))
+                    height: 680,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: BoxContainer(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: TSizes.defaultSpace,
+                                      vertical: TSizes.defaultSpace,
+                                    ),
+                                    child: TableBox(),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: TSizes.defaultSpace),
+                              BoxContainer(
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 25,
+                                    vertical: 10,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [Text("64,192 Rs")],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: TSizes.spaceBtwItems),
+                        BoxContainer(
+                          width: MediaQuery.of(context).size.width * 0.24,
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: OrdersForm(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
