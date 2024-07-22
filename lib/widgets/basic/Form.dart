@@ -13,37 +13,37 @@ class OrdersForm extends StatelessWidget {
     return Column(
       children: [
         InputField(
-          icon: Iconsax.hashtag4,
+          iconPath: 'assets/icons/Iconsax/twotone/hashtag.svg',
           labelText: "Product ID",
           hintText: "EDGP102321",
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         InputField(
-          icon: Iconsax.box_search4,
+          iconPath: 'assets/icons/Iconsax/twotone/box-search.svg',
           labelText: "Product Name",
           hintText: "Paper Towel",
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         InputField(
-          icon: Iconsax.dollar_circle,
+          iconPath: 'assets/icons/Iconsax/twotone/dollar-circle.svg',
           labelText: "Rate",
           hintText: "1000 Rs",
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         InputField(
-          icon: Iconsax.box4,
+          iconPath: 'assets/icons/Iconsax/twotone/box.svg',
           labelText: "Qty.",
           hintText: "8",
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         InputField(
-          icon: Iconsax.discount_shape4,
+          iconPath: 'assets/icons/Iconsax/twotone/discount-shape.svg',
           labelText: "Discount",
           hintText: "5%",
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         InputField(
-          icon: Iconsax.percentage_circle4,
+          iconPath: 'assets/icons/Iconsax/twotone/percentage-circle.svg',
           labelText: "Tax",
           hintText: "5%",
         ),
