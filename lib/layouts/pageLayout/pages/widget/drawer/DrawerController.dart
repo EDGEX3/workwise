@@ -16,7 +16,7 @@ import 'package:workwise/layouts/pageLayout/pages/Sells/sells.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/dashboard.dart';
 
 class NavDrawerController extends GetxController {
-  var currentItem = [MenuItems.Items[0]].obs;
+  var currentItem = [MenuItems.Items.first].obs;
 
   void navigateTo(MenuItem item) {
     currentItem.first = item;

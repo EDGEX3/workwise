@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-// import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
@@ -26,7 +25,6 @@ class OrderEditCreate extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: TSizes.spaceBtwSections),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -38,7 +36,7 @@ class OrderEditCreate extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CustomTitle("OrderEditCreate"),
+                          CustomTitle("Order"),
                           SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
@@ -65,7 +63,7 @@ class OrderEditCreate extends StatelessWidget {
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
                   Container(
-                    height: 680,
+                    height: 620,
                     child: Row(
                       children: [
                         Expanded(
@@ -76,10 +74,8 @@ class OrderEditCreate extends StatelessWidget {
                                   width:
                                       MediaQuery.of(context).size.width * 0.7,
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: TSizes.defaultSpace,
-                                      vertical: TSizes.defaultSpace,
-                                    ),
+                                    padding:
+                                        EdgeInsets.all(TSizes.spaceBtwItems),
                                     child: TableBox(),
                                   ),
                                 ),
@@ -103,7 +99,7 @@ class OrderEditCreate extends StatelessWidget {
                         ),
                         const SizedBox(width: TSizes.spaceBtwItems),
                         BoxContainer(
-                          width: MediaQuery.of(context).size.width * 0.24,
+                          width: 390,
                           child: Padding(
                             padding: EdgeInsets.all(20),
                             child: OrdersForm(),
@@ -116,6 +112,7 @@ class OrderEditCreate extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: TSizes.spaceBtwSections),
         ],
       ),
     );

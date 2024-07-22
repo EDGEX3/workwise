@@ -64,9 +64,6 @@ class OrderInfo extends StatelessWidget {
               fontWeight: FontWeight.w400,
               // letterSpacing: 0.15,
             )),
-        SizedBox(
-          height: TSizes.defaultSpace,
-        ),
         Text(address2,
             style: TextStyle(
               color: TColors.white60,

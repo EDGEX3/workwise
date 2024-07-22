@@ -29,7 +29,7 @@ class InputField extends StatelessWidget {
         maxWidth: 350,
       ),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
+        padding: EdgeInsets.symmetric(vertical: TSizes.defaultMinSpace),
         decoration: BoxDecoration(
           border: Border(bottom: BorderSide(width: 1, color: TColors.white10)),
         ),

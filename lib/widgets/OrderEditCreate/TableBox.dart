@@ -13,7 +13,7 @@ class TableBox extends StatelessWidget {
             border: Border(
               bottom: BorderSide(
                 color: TColors.white25,
-                width: 1.0,
+                width: 0.5,
               ),
             ),
           ),
@@ -53,7 +53,7 @@ class TableBox extends StatelessWidget {
             border: Border(
               bottom: BorderSide(
                 color: TColors.white25,
-                width: 1.0,
+                width: 0.5,
               ),
             ),
           ),

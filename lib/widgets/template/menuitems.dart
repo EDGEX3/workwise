@@ -26,6 +26,5 @@ class MenuItems {
     Sells,
     Buy,
     DailyExpanse,
-    OrderEditCreate
   ];
 }
