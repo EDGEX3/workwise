@@ -1,11 +1,15 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Import for SVG support
 
 class ComboBox extends StatelessWidget {
   final String labelText;
   final String hintText;
-  final IconData? icon;
+  final String? iconPath; // Optional parameter for asset icon path
+  final IconData? icon;    // Optional parameter for Iconsax or other icons
   final List<DropdownMenuItem<String>>? items;
   final String? value;
   final Function(String?)? onChanged;
@@ -14,6 +18,7 @@ class ComboBox extends StatelessWidget {
     super.key,
     required this.labelText,
     required this.hintText,
+    this.iconPath,
     this.icon,
     this.items,
     this.value,
@@ -30,12 +35,19 @@ class ComboBox extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(vertical: TSizes.defaultSpace),
           decoration: BoxDecoration(
-            border:
-                Border(bottom: BorderSide(width: 1, color: TColors.white10)),
+            border: Border(bottom: BorderSide(width: 1, color: TColors.white10)),
           ),
           child: Row(
             children: [
-              if (icon != null) ...[
+              if (iconPath != null) ...[
+                SvgPicture.asset(
+                  iconPath!,
+                  width: TSizes.iconMd,
+                  height: TSizes.iconMd,
+                  color: TColors.secondary,
+                ),
+                SizedBox(width: 20),
+              ] else if (icon != null) ...[
                 Icon(
                   icon,
                   size: TSizes.iconMd,
@@ -78,25 +90,3 @@ class ComboBox extends StatelessWidget {
         ));
   }
 }
-//how to use
-// ComboBox(
-//    labelText: 'Select Option',
-//    hintText: 'Choose one',
-//    icon: Icons.arrow_drop_down,
-//    items: [
-//        DropdownMenuItem(
-//            value: 'option1',
-//            child: Text('Option 1'),
-//        ),
-//        DropdownMenuItem(
-//            value: 'option2',
-//            child: Text('Option 2'),
-//        ),
-//    ],
-//    value: selectedValue,
-//    onChanged: (newValue) {
-//        setState(() {
-//        selectedValue = newValue;
-//        });
-//    },
-// )

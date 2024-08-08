@@ -138,7 +138,8 @@ class Inventory extends StatelessWidget {
                                                     width: TSizes
                                                         .spaceBtwInputFields),
                                                 ComboBox(
-                                                  icon: Iconsax.barcode,
+                                                  iconPath: 'assets/icons/Iconsax/twotone/barcode.svg',
+                                                  // icon: Iconsax.barcode,
                                                   labelText: 'Category',
                                                   hintText: 'Choose Category',
                                                   items: [

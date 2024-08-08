@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; // Import for SVG support
 import 'package:workwise/utils/const/colors.dart';
@@ -65,7 +67,7 @@ class _AutoCompleteTextFieldState extends State<AutoCompleteTextField> {
   void _showSuggestions(bool show) {
     if (show && !_isOverlayVisible) {
       _overlayEntry = _createOverlayEntry();
-      Overlay.of(context)?.insert(_overlayEntry!);
+      Overlay.of(context).insert(_overlayEntry!);
       _isOverlayVisible = true;
     } else if (!show && _isOverlayVisible) {
       _overlayEntry?.remove();
