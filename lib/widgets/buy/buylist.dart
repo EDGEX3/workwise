@@ -9,6 +9,7 @@ class BuyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       cacheExtent: 2,
       itemBuilder: (context, index) => Column(
