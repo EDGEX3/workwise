@@ -91,7 +91,6 @@ class AppDrawer extends StatelessWidget {
                 borderRadius: BorderRadius.circular(TSizes.borderRadiusSm + 1),
               ),
               onTap: () {
-                drawercontroller.currentItem.add(MenuItems.Settings);
                 drawercontroller.navigateTo(MenuItems.Settings);
                 navigatorController.updateWidth(0.0);
               },
