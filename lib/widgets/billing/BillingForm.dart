@@ -4,8 +4,8 @@ import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/basic/CustomButton.dart';
 import 'package:workwise/widgets/InputField/InputField.dart';
 
-class OrdersForm extends StatelessWidget {
-  const OrdersForm({super.key});
+class BillingForm extends StatelessWidget {
+  const BillingForm({super.key});
 
   @override
   Widget build(BuildContext context) {
