@@ -10,6 +10,7 @@ class CustomerList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       cacheExtent: 2,
       itemBuilder: (context, index) => Column(
         children: [

@@ -11,6 +11,7 @@ class InventoryList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       cacheExtent: 2,
+      physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => Column(
         children: [
           ListBox(
