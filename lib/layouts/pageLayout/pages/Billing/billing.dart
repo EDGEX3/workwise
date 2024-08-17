@@ -85,7 +85,7 @@ class _BillingState extends State<Billing> {
                               ],
                             )
                           ),
-                          const SizedBox(height: TSizes.spaceBtwItems),
+                          const SizedBox(width: TSizes.spaceBtwItems),
                           Expanded(
                             child:  AutoCompleteTextField(
                               labelText: 'Select Date',
@@ -102,27 +102,6 @@ class _BillingState extends State<Billing> {
                                 print('Selected value: $value');
                               },
                             ),
-                            /*ComboBox(
-                              iconPath: 'assets/icons/Iconsax/twotone/sms.svg',
-                              labelText: "Email",
-                              hintText: "Select Customer Email",
-                              items: [
-                                DropdownMenuItem(
-                                  value: 'KrunalBhadesiya',
-                                  child: Text('krunalbhadesiya@workwise.com'),
-                                ),
-                                DropdownMenuItem(
-                                  value: 'HimanshuPatel',
-                                  child: Text('himanshupatel@workwise.com'),
-                                ),
-                              ],
-                              value: selectedEmail,
-                              onChanged: (newValue) {
-                                setState(() {
-                                  selectedEmail = newValue;
-                                });
-                              },
-                            ),*/
                           ),
                           const SizedBox(width: TSizes.spaceBtwItems),
                           Expanded(

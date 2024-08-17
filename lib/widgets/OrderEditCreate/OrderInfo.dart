@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:workwise/widgets/OrderEditCreate/Tag.dart';
+import 'package:workwise/widgets/basic/Tag.dart';
 
 class OrderInfo extends StatelessWidget {
   final String name, cid, phoneno, email, address1, address2;

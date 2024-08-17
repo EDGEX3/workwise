@@ -1,9 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/drawer/DrawerController.dart';
+import 'package:workwise/layouts/pageLayout/pages/widget/navbar/controllers/NavigatorController.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
 import 'package:workwise/widgets/basic/CustomButton.dart';
+import 'package:get/get.dart';
+import 'package:workwise/widgets/template/menuitems.dart';
 
 class TransactionAdd extends StatefulWidget {
   const TransactionAdd({Key? key}) : super(key: key);
@@ -13,6 +17,7 @@ class TransactionAdd extends StatefulWidget {
 }
 
 class TransactionAddState extends State<TransactionAdd> {
+  final navDrawerController = Get.put(NavDrawerController()); // Ensure this instance is available
   bool state = false;
 
   void toggle() {
@@ -63,7 +68,10 @@ class TransactionAddState extends State<TransactionAdd> {
                     ),
                     boxBorderColor: TColors.white25,
                     buttonRadius: TSizes.borderRadiusxLg,
-                    onClick: () {},
+                    onClick: () {
+                      // Correctly using the navigatePush function with an item
+                      Get.find<NavDrawerController>().navigatePush(MenuItems.DailyExpanseAdd);
+                    },
                   ),
                 ),
                 AnimatedContainer(
