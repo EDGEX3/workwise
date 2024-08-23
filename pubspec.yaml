@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.5
+  printing: ^5.10.2
+  pdf: ^3.9.0
 
 
 
