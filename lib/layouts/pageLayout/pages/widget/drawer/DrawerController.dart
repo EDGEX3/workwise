@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workwise/layouts/pageLayout/pages/AddSells/addSells.dart';
+import 'package:workwise/layouts/pageLayout/pages/BuySelectedCustomer/BuySelectedCustomer.dart';
+import 'package:workwise/layouts/pageLayout/pages/DailyExpanseAdd/DailyExpanseAdd.dart';
 import 'package:workwise/layouts/pageLayout/pages/OrderEditCreate/orderEditCreate.dart';
+import 'package:workwise/layouts/pageLayout/pages/SellsSelectedCustomer/SellsSelectedCustomer.dart';
 import 'package:workwise/layouts/pageLayout/pages/Settings/settings.dart';
 import 'package:workwise/widgets/template/menuitem.dart';
 import 'package:workwise/widgets/template/menuitems.dart';
@@ -57,7 +60,13 @@ class NavDrawerController extends GetxController {
       case MenuItems.Settings:
         return Settings();      
       case MenuItems.OrderEditCreate:
-        return OrderEditCreate();      
+        return OrderEditCreate();
+      case MenuItems.DailyExpanseAdd:
+        return DailyExpanseAdd();
+      case MenuItems.BuySelectedCustomer:
+        return BuySelectedCustomer();
+      case MenuItems.SellsSelectedCustomer:
+        return SellsSelectedCustomer();
       default:
         return const Dashboard(key: Key("dashboard"));
     }

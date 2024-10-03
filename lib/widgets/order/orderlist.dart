@@ -20,12 +20,12 @@ class OrderList extends StatelessWidget {
         children: [
           ListBox(
               dataContainer: OrderInfo(
-            title: "Customer name",
-            tagtitle: "Modification",
-            amount: 10000,
-            date: DateTime.now().toString().split(":")[0],
-            OrderId: "1234567890",
-          ),
+                title: "Customer name",
+                tagtitle: "Modification",
+                amount: 10000,
+                date: DateTime.now().toString().split(":")[0],
+                OrderId: "1234567890",
+              ),
           onClick: () {
             DrawerController.navigatePush(MenuItems.OrderEditCreate);
           },
