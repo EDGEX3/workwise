@@ -48,6 +48,7 @@ class InputField extends StatelessWidget {
                 iconPath!,
                 width: TSizes.iconMd,
                 height: TSizes.iconMd,
+                // ignore: deprecated_member_use
                 color: TColors.secondary,
                 semanticsLabel: '$labelText icon',
               ),

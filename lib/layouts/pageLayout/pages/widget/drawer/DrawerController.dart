@@ -13,7 +13,7 @@ import 'package:workwise/layouts/pageLayout/pages/Billing/billing.dart';
 import 'package:workwise/layouts/pageLayout/pages/Buy/buy.dart';
 import 'package:workwise/layouts/pageLayout/pages/Customers/customers.dart';
 import 'package:workwise/layouts/pageLayout/pages/DailyExpanse/dailyexpanse.dart';
-import 'package:workwise/layouts/pageLayout/pages/Inventory/inventory.dart';
+import 'package:workwise/layouts/pageLayout/pages/Inventory/inventorys.dart';
 import 'package:workwise/layouts/pageLayout/pages/Orders/orders.dart';
 import 'package:workwise/layouts/pageLayout/pages/Sells/sells.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/dashboard.dart';
@@ -44,7 +44,7 @@ class NavDrawerController extends GetxController {
       case MenuItems.Orders:
         return const Orders(key: Key("orders"));
       case MenuItems.Inventory:
-        return Inventory();
+        return Inventorys();
       case MenuItems.Billing:
         return Billing();
       case MenuItems.DailyExpanse:

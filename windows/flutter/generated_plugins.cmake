@@ -3,8 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  realm
   printing
+  realm
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

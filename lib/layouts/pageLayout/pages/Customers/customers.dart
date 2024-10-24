@@ -1,3 +1,4 @@
+
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -183,68 +184,56 @@ class Customers extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/user.svg',
                 labelText: 'Name',
                 initialValue: formData['name'],
                 hintText: 'Enter name',
                 onSaved: (value) => formData['name'] = value ?? '',
-              ),
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/shop.svg',
                 labelText: 'Farm Name',
                 initialValue: formData['farmName'],
                 hintText: 'Enter farm name',
                 onSaved: (value) => formData['farmName'] = value ?? '',
-              ),
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/location.svg',
                 labelText: 'Address',
                 initialValue: formData['address'],
                 hintText: 'Enter address',
                 onSaved: (value) => formData['address'] = value ?? '',
-              ),
             ),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         Row(
           children: [
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/call.svg',
                 labelText: 'Phone No.',
                 initialValue: formData['phoneNo'],
                 hintText: 'Enter phone number',
                 onSaved: (value) => formData['phoneNo'] = value ?? '',
-              ),
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/whatsapp.svg',
                 labelText: 'Whatsapp No.',
                 initialValue: formData['whatsappNo'],
                 hintText: 'Enter Whatsapp number',
                 onSaved: (value) => formData['whatsappNo'] = value ?? '',
-              ),
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
-            Expanded(
-              child: InputField(
+            InputField(
                 iconPath: 'assets/icons/Iconsax/twotone/sms.svg',
                 labelText: 'Email',
                 initialValue: formData['email'],
                 hintText: 'Enter email',
                 onSaved: (value) => formData['email'] = value ?? '',
-              ),
             ),
           ],
         ),
@@ -255,64 +244,52 @@ class Customers extends StatelessWidget {
   Widget _buildBillingDetails(Map<String, dynamic> formData) {
     return Row(
       children: [
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'Account',
             initialValue: formData['account'].toString(),
             hintText: 'Enter account number',
             onSaved: (value) => formData['account'] = value ?? '',
-          ),
         ),
         const SizedBox(width: TSizes.spaceBtwInputFields),
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'IFSC',
             initialValue: formData['ifsc'],
             hintText: 'Enter IFSC code',
             onSaved: (value) => formData['ifsc'] = value ?? '',
           ),
-        ),
         const SizedBox(width: TSizes.spaceBtwInputFields),
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'UPI',
             initialValue: formData['upi'],
             hintText: 'Enter UPI ID',
             onSaved: (value) => formData['upi'] = value ?? '',
           ),
-        ),
-      ],
+        ],
     );
   }
 
   Widget _buildBusinessDetails(Map<String, dynamic> formData) {
     return Row(
       children: [
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'GST',
             initialValue: formData['gst'],
             hintText: 'Enter GST number',
             onSaved: (value) => formData['gst'] = value ?? '',
           ),
-        ),
         const SizedBox(width: TSizes.spaceBtwInputFields),
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'PAN',
             hintText: 'Enter PAN number',
             initialValue: formData['pan'],
             onSaved: (value) => formData['pan'] = value ?? '',
-          ),
         ),
         const SizedBox(width: TSizes.spaceBtwInputFields),
-        Expanded(
-          child: InputField(
+        InputField(
             labelText: 'Type',
             initialValue: formData['type'],
             hintText: 'Enter business type',
             onSaved: (value) => formData['type'] = value ?? '',
-          ),
         ),
       ],
     );

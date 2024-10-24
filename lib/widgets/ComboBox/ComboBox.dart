@@ -68,7 +68,7 @@ class ComboBox extends StatelessWidget {
                     ),
                     Container(
                       height: 24,
-                      child: DropdownButtonFormField<String>(
+                      child: DropdownButtonFormField(
                         value: value,
                         onChanged: onChanged,
                         items: items,
@@ -79,7 +79,8 @@ class ComboBox extends StatelessWidget {
                         style: TextStyle(
                             color: TColors.secondary,
                             fontSize: TSizes.fontSizeMd,
-                            fontWeight: FontWeight.w500),
+                            fontWeight: FontWeight.w500
+                        ),
                       ),
                     )
                   ],
