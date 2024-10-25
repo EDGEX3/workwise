@@ -178,7 +178,7 @@ class Inventorys extends StatelessWidget {
         Row(
           children: [
             InputField(
-                iconPath: 'assets/icons/Iconsax/twotone/user.svg',
+                // iconPath: 'assets/icons/Iconsax/twotone/user.svg',
                 labelText: 'Name',
                 hintText: 'Enter product name',
                 initialValue: formData['name'],
@@ -186,7 +186,7 @@ class Inventorys extends StatelessWidget {
               ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
-              iconPath: 'assets/icons/Iconsax/twotone/shop.svg',
+              // iconPath: 'assets/icons/Iconsax/twotone/shop.svg',
               labelText: 'Brand Name',
               hintText: 'Enter Brand Name',
               initialValue: formData['brandName'],
@@ -194,7 +194,7 @@ class Inventorys extends StatelessWidget {
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
-              iconPath: 'assets/icons/Iconsax/twotone/barcode.svg',
+              // iconPath: 'assets/icons/Iconsax/twotone/barcode.svg',
               labelText: 'Category',
               hintText: 'Choose Category',
               initialValue: formData['category'],
