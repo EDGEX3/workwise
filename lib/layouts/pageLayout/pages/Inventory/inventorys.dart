@@ -1,3 +1,5 @@
+// file path lib/layouts/pageLayout/pages/Inventory/states/selectedInventoryState.dart
+
 // ignore_for_file: unused_import
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -113,7 +115,8 @@ class Inventorys extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
               child: Padding(
                 padding: const EdgeInsets.all(TSizes.lg),
-                child: SingleChildScrollView(child: _buildInventoryForm(context)),
+                child:
+                    SingleChildScrollView(child: _buildInventoryForm(context)),
               ),
             ),
           ),
@@ -178,12 +181,12 @@ class Inventorys extends StatelessWidget {
         Row(
           children: [
             InputField(
-                // iconPath: 'assets/icons/Iconsax/twotone/user.svg',
-                labelText: 'Name',
-                hintText: 'Enter product name',
-                initialValue: formData['name'],
-                onSaved: (value) => formData['name'] = value ?? '',
-              ),
+              // iconPath: 'assets/icons/Iconsax/twotone/user.svg',
+              labelText: 'Name',
+              hintText: 'Enter product name',
+              initialValue: formData['name'],
+              onSaved: (value) => formData['name'] = value ?? '',
+            ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
               // iconPath: 'assets/icons/Iconsax/twotone/shop.svg',
@@ -233,7 +236,7 @@ class Inventorys extends StatelessWidget {
               labelText: 'Buying Price',
               hintText: 'Enter Buying Price',
               initialValue: formData['buyingPrice'],
-              onSaved: (value) => formData['buyingPrice'] = value ?? '',
+              onSaved: (value) => formData['buyingPrice'] = value ?? '0',
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
@@ -241,7 +244,7 @@ class Inventorys extends StatelessWidget {
               labelText: 'Selling Price',
               hintText: 'Enter Selling Price',
               initialValue: formData['sellingPrice'],
-              onSaved: (value) => formData['sellingPrice'] = value ?? '',
+              onSaved: (value) => formData['sellingPrice'] = value ?? '0',
             ),
           ],
         ),
@@ -259,7 +262,7 @@ class Inventorys extends StatelessWidget {
               labelText: 'Total Qty.',
               hintText: 'Enter Total Qty.',
               initialValue: formData['totalQty'],
-              onSaved: (value) => formData['totalQty'] = value ?? '',
+              onSaved: (value) => formData['totalQty'] = value ?? '0',
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
@@ -267,7 +270,7 @@ class Inventorys extends StatelessWidget {
               labelText: 'Sell Qty.',
               hintText: 'Enter Sell Qty.',
               initialValue: formData['sellQty'],
-              onSaved: (value) => formData['sellQty'] = value ?? '',
+              onSaved: (value) => formData['sellQty'] = value ?? '0',
             ),
             const SizedBox(width: TSizes.spaceBtwInputFields),
             InputField(
@@ -275,7 +278,7 @@ class Inventorys extends StatelessWidget {
               labelText: 'Available Qty.',
               hintText: 'Enter Available Qty.',
               initialValue: formData['availableQty'],
-              onSaved: (value) => formData['availableQty'] = value ?? '',
+              onSaved: (value) => formData['availableQty'] = value ?? '0',
             ),
           ],
         ),
@@ -317,7 +320,8 @@ class Inventorys extends StatelessWidget {
               try {
                 if (inventoryState.currentInventory.value != null) {
                   db.delete<Inventory>(inventoryState.currentInventory.value!);
-                  inventoryState.deleteInventory(inventoryState.currentInventory.value!);
+                  inventoryState
+                      .deleteInventory(inventoryState.currentInventory.value!);
                   Navigator.pop(context);
                   formKey.currentState?.reset();
                 }
@@ -342,16 +346,29 @@ class Inventorys extends StatelessWidget {
       Map<String, dynamic> formData, InventoryState inventoryState) {
     try {
       final id = inventoryState.currentInventory.value?.id ?? ObjectId();
+
+      // Parse string values to integers
+      final buyingPrice = int.tryParse(formData['buyingPrice']) ?? 0;
+      final sellingPrice = int.tryParse(formData['sellingPrice']) ?? 0;
+      final totalQty = int.tryParse(formData['totalQty']) ?? 0;
+      final sellQty = int.tryParse(formData['sellQty']) ?? 0;
+      final availableQty = int.tryParse(formData['availableQty']) ?? 0;
+
       final inventory = Inventory(
         id,
         formData['name']!,
         formData['brandName']!,
         formData['category']!,
-        formData['buyingPrice']!,
-        formData['sellingPrice']!,
-        formData['totalQty']!,
-        formData['sellQty']!,
-        formData['availableQty']!,
+        buyingPrice,
+        sellingPrice,
+        totalQty,
+        sellQty,
+        availableQty,
+        // formData['buyingPrice']!,
+        // formData['sellingPrice']!,
+        // formData['totalQty']!,
+        // formData['sellQty']!,
+        // formData['availableQty']!,
       );
       db.insertOrUpdate(inventory);
       inventoryState.upsertInventory(inventory);
