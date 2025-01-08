@@ -13,6 +13,7 @@ import 'package:workwise/widgets/basic/CustomButton.dart';
 import 'package:workwise/widgets/basic/Title.dart';
 import 'package:workwise/widgets/billing/BillingForm.dart';
 import 'package:workwise/widgets/billing/TableBox.dart';
+import 'package:workwise/widgets/print/printWidget.dart';
 
 class Billing extends StatefulWidget {
   const Billing({super.key});
@@ -28,6 +29,9 @@ class _BillingState extends State<Billing> {
 
   @override
   Widget build(BuildContext context) {
+    final String htmlContent =
+        "<h1>Billing Document</h1><p>This is a billing document.</p>";
+
     return Padding(
       padding: const EdgeInsets.only(
         right: TSizes.spaceBtwSections,
@@ -52,7 +56,9 @@ class _BillingState extends State<Billing> {
                         width: 50,
                         height: 50,
                         wedge: Icon(Iconsax.printer4),
-                        onClick: () {},
+                        onClick: () async {
+                          PrintWidget(data: htmlContent).PinterWork(context);
+                        },
                         boxBorderColor: TColors.white30,
                       ),
                     ],
@@ -63,31 +69,30 @@ class _BillingState extends State<Billing> {
                       Row(
                         children: [
                           Expanded(
-                            child:  AutoCompleteTextField(
-                                      labelText: "Name",
-                                      hintText: "Select Customer Name",
-                                      iconPath: 'assets/icons/Iconsax/twotone/user.svg',
-                                      suggestions: [
-                                        'Krunal Bhadesiya',
-                                        'Himanshu Patel',
-                                      ],
-                                    ),
+                            child: AutoCompleteTextField(
+                              labelText: "Name",
+                              hintText: "Select Customer Name",
+                              iconPath: 'assets/icons/Iconsax/twotone/user.svg',
+                              suggestions: [
+                                'Krunal Bhadesiya',
+                                'Himanshu Patel',
+                              ],
+                            ),
                           ),
                           const SizedBox(width: TSizes.spaceBtwItems),
                           Expanded(
-                            child:AutoCompleteTextField(
-                              labelText: "Phone No.",
-                              hintText: "Select Phone Number",
-                              iconPath: 'assets/icons/Iconsax/twotone/call.svg',
-                              suggestions: [
-                                '+919725636621',
-                                '+919510584955',
-                              ],
-                            )
-                          ),
-                          const SizedBox(height: TSizes.spaceBtwItems),
+                              child: AutoCompleteTextField(
+                            labelText: "Phone No.",
+                            hintText: "Select Phone Number",
+                            iconPath: 'assets/icons/Iconsax/twotone/call.svg',
+                            suggestions: [
+                              '+919725636621',
+                              '+919510584955',
+                            ],
+                          )),
+                          const SizedBox(width: TSizes.spaceBtwItems),
                           Expanded(
-                            child:  AutoCompleteTextField(
+                            child: AutoCompleteTextField(
                               labelText: 'Select Date',
                               hintText: 'Enter a date',
                               iconPath: 'assets/icons/Iconsax/twotone/sms.svg',
@@ -102,32 +107,12 @@ class _BillingState extends State<Billing> {
                                 print('Selected value: $value');
                               },
                             ),
-                            /*ComboBox(
-                              iconPath: 'assets/icons/Iconsax/twotone/sms.svg',
-                              labelText: "Email",
-                              hintText: "Select Customer Email",
-                              items: [
-                                DropdownMenuItem(
-                                  value: 'KrunalBhadesiya',
-                                  child: Text('krunalbhadesiya@workwise.com'),
-                                ),
-                                DropdownMenuItem(
-                                  value: 'HimanshuPatel',
-                                  child: Text('himanshupatel@workwise.com'),
-                                ),
-                              ],
-                              value: selectedEmail,
-                              onChanged: (newValue) {
-                                setState(() {
-                                  selectedEmail = newValue;
-                                });
-                              },
-                            ),*/
                           ),
                           const SizedBox(width: TSizes.spaceBtwItems),
                           Expanded(
                             child: InputField(
-                              iconPath: 'assets/icons/Iconsax/twotone/percentage-circle.svg',
+                              iconPath:
+                                  'assets/icons/Iconsax/twotone/percentage-circle.svg',
                               labelText: "Tax No.",
                               hintText: "Enter Tax No.",
                             ),
@@ -146,9 +131,11 @@ class _BillingState extends State<Billing> {
                             children: [
                               Expanded(
                                 child: BoxContainer(
-                                  width: MediaQuery.of(context).size.width * 0.7,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
                                   child: Padding(
-                                    padding: EdgeInsets.all(TSizes.spaceBtwItems),
+                                    padding:
+                                        EdgeInsets.all(TSizes.spaceBtwItems),
                                     child: TableBox(),
                                   ),
                                 ),

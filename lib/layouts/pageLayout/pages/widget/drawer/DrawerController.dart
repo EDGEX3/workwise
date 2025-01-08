@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workwise/layouts/pageLayout/pages/AddSells/addSells.dart';
+import 'package:workwise/layouts/pageLayout/pages/BuySelectedCustomer/BuySelectedCustomer.dart';
+import 'package:workwise/layouts/pageLayout/pages/DailyExpanseAdd/DailyExpanseAdd.dart';
 import 'package:workwise/layouts/pageLayout/pages/OrderEditCreate/orderEditCreate.dart';
+import 'package:workwise/layouts/pageLayout/pages/SellsSelectedCustomer/SellsSelectedCustomer.dart';
 import 'package:workwise/layouts/pageLayout/pages/Settings/settings.dart';
 import 'package:workwise/widgets/template/menuitem.dart';
 import 'package:workwise/widgets/template/menuitems.dart';
@@ -10,7 +13,7 @@ import 'package:workwise/layouts/pageLayout/pages/Billing/billing.dart';
 import 'package:workwise/layouts/pageLayout/pages/Buy/buy.dart';
 import 'package:workwise/layouts/pageLayout/pages/Customers/customers.dart';
 import 'package:workwise/layouts/pageLayout/pages/DailyExpanse/dailyexpanse.dart';
-import 'package:workwise/layouts/pageLayout/pages/Inventory/inventory.dart';
+import 'package:workwise/layouts/pageLayout/pages/Inventory/inventorys.dart';
 import 'package:workwise/layouts/pageLayout/pages/Orders/orders.dart';
 import 'package:workwise/layouts/pageLayout/pages/Sells/sells.dart';
 import 'package:workwise/layouts/pageLayout/pages/dashboard/dashboard.dart';
@@ -41,7 +44,7 @@ class NavDrawerController extends GetxController {
       case MenuItems.Orders:
         return const Orders(key: Key("orders"));
       case MenuItems.Inventory:
-        return Inventory();
+        return Inventorys();
       case MenuItems.Billing:
         return Billing();
       case MenuItems.DailyExpanse:
@@ -57,7 +60,13 @@ class NavDrawerController extends GetxController {
       case MenuItems.Settings:
         return Settings();      
       case MenuItems.OrderEditCreate:
-        return OrderEditCreate();      
+        return OrderEditCreate();
+      case MenuItems.DailyExpanseAdd:
+        return DailyExpanseAdd();
+      case MenuItems.BuySelectedCustomer:
+        return BuySelectedCustomer();
+      case MenuItems.SellsSelectedCustomer:
+        return SellsSelectedCustomer();
       default:
         return const Dashboard(key: Key("dashboard"));
     }

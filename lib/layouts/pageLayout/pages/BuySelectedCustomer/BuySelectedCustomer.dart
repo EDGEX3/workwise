@@ -3,16 +3,15 @@ import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
+import 'package:workwise/widgets/BuySelectedCustomer/BuySelectedCustomerForm.dart';
 import 'package:workwise/widgets/OrderEditCreate/OrderInfo.dart';
-import 'package:workwise/widgets/basic/TableBox.dart';
-import 'package:workwise/widgets/basic/Tag.dart';
+import 'package:workwise/widgets/BuySelectedCustomer/TableBox.dart';
 import 'package:workwise/widgets/basic/Box.dart';
 import 'package:workwise/widgets/basic/CustomButton.dart';
-import 'package:workwise/widgets/OrderEditCreate/OrdersForm.dart';
 import 'package:workwise/widgets/basic/Title.dart';
 
-class OrderEditCreate extends StatelessWidget {
-  const OrderEditCreate({super.key});
+class BuySelectedCustomer extends StatelessWidget {
+  const BuySelectedCustomer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +33,7 @@ class OrderEditCreate extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          CustomTitle("Order"),
-                          SizedBox(
-                            width: TSizes.spaceBtwItems,
-                          ),
-                          Tag(title: "working")
-                        ],
-                      ),
+                      CustomTitle("Buy"),
                       customButton(
                         width: 50,
                         height: 50,
@@ -63,7 +54,7 @@ class OrderEditCreate extends StatelessWidget {
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
                   Container(
-                    height: 620,
+                    height: 540,
                     child: Row(
                       children: [
                         Expanded(
@@ -72,10 +63,10 @@ class OrderEditCreate extends StatelessWidget {
                               Expanded(
                                 child: BoxContainer(
                                   width:
-                                      MediaQuery.of(context).size.width * 0.7,
+                                  MediaQuery.of(context).size.width * 0.7,
                                   child: Padding(
                                     padding:
-                                        EdgeInsets.all(TSizes.spaceBtwItems),
+                                    EdgeInsets.all(TSizes.spaceBtwItems),
                                     child: TableBox(),
                                   ),
                                 ),
@@ -90,7 +81,7 @@ class OrderEditCreate extends StatelessWidget {
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [Text("64,192 Rs")],
+                                    children: [Text("90,000 Rs")],
                                   ),
                                 ),
                               ),
@@ -102,7 +93,7 @@ class OrderEditCreate extends StatelessWidget {
                           width: 390,
                           child: Padding(
                             padding: EdgeInsets.all(20),
-                            child: OrdersForm(),
+                            child: BuySelectedCustomerForm(),
                           ),
                         ),
                       ],

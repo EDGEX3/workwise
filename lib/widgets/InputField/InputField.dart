@@ -1,16 +1,19 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:workwise/utils/const/colors.dart';
 import 'package:workwise/utils/const/size.dart';
-import 'package:flutter_svg/flutter_svg.dart'; // Import for SVG support
+import 'package:flutter_svg/flutter_svg.dart';
 
 class InputField extends StatelessWidget {
   final String labelText;
   final String hintText;
-  final String? iconPath; // Optional parameter for asset icon path
-  final IconData? icon;    // Optional parameter for Iconsax or other icons
+  final String? iconPath;
+  final String? initialValue;
+  final IconData? icon;
+  final FocusNode? focusNode;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
+  final Function(String)? onChanged;
 
   const InputField({
     super.key,
@@ -18,8 +21,13 @@ class InputField extends StatelessWidget {
     required this.hintText,
     this.iconPath,
     this.icon,
+    this.focusNode,
+    this.validator,
+    this.onSaved,
     this.controller,
-  });
+    this.onChanged,
+    this.initialValue,
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +48,9 @@ class InputField extends StatelessWidget {
                 iconPath!,
                 width: TSizes.iconMd,
                 height: TSizes.iconMd,
+                // ignore: deprecated_member_use
                 color: TColors.secondary,
+                semanticsLabel: '$labelText icon',
               ),
               SizedBox(width: 20),
             ] else if (icon != null) ...[
@@ -48,6 +58,7 @@ class InputField extends StatelessWidget {
                 icon,
                 size: TSizes.iconMd,
                 color: TColors.secondary,
+                semanticLabel: '$labelText icon',
               ),
               SizedBox(width: 20),
             ],
@@ -58,24 +69,37 @@ class InputField extends StatelessWidget {
                   Text(
                     labelText,
                     style: TextStyle(
-                        color: TColors.white30,
-                        fontSize: TSizes.fontSizeSm,
-                        fontWeight: FontWeight.w400),
+                      color: TColors.white30,
+                      fontSize: TSizes.fontSizeSm,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                   Container(
                     height: 24,
-                    child: TextField(
-                      controller: controller,
+                    child: TextFormField(
+                      focusNode: focusNode,
+                      initialValue: initialValue,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: hintText,
+                        hintStyle: TextStyle(
+                          color: TColors.white30,
+                        ),
+                        errorStyle: TextStyle(
+                          color: Colors.red,
+                        ),
                       ),
                       style: TextStyle(
-                          color: TColors.secondary,
-                          fontSize: TSizes.fontSizeMd,
-                          fontWeight: FontWeight.w500),
+                        color: TColors.secondary,
+                        fontSize: TSizes.fontSizeMd,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      validator: validator,
+                      onSaved: onSaved,
+                      onChanged: onChanged,
+                      autofillHints: [AutofillHints.username, AutofillHints.email],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
